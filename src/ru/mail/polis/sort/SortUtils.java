@@ -49,4 +49,13 @@ public class SortUtils {
         }
         return isSorted;
     }
+
+    public static <T extends Comparable<T>> boolean isMyArraySorted(T[] array)
+    {
+        boolean isSorted = true;
+        for (int i = 0; i < array.length - 1 && isSorted; i++) {
+            isSorted = array[i].compareTo(array[i + 1]) <= 0;//comparator.compare(array[i], array[i + 1]) <= 0;
+        }
+        return isSorted;
+    }
 }
